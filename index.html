@@ -19,6 +19,10 @@
 
         /* Header styles */
         .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
             overflow: hidden;
             background-color: black;
             padding: 20px 10px;
@@ -54,14 +58,9 @@
             }
         }
 
-        /* Horizontal scroll container styles */
-        .horizontal-scroll {
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-        .horizontal-scroll img {
-            display: inline-block;
-            margin-right: 10px;
+        /* Add padding to the top of the content to avoid overlapping with the sticky header */
+        #main {
+            padding-top: 80px; /* Adjust the padding value according to the header height */
         }
     </style>
 </head>
@@ -92,21 +91,14 @@
         <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
             <h2 class="w3-text-light-grey">BIO</h2>
             <hr style="width:200px" class="w3-opacity">
-            <p>Maria Gachuhi is a second-year student at Howard Community College in Maryland, pursuing her associate’s degree in Audio Video Media Production, where she has been listed on the Dean’s List as an Honors student. She has gained experience in directing, producing, writing, editing, and graphic design. Maria has directed and produced several short films, interviews, and a documentary. Having previously lived in Kenya and South Korea, Maria is fluent in English, Swahili, and Korean. After graduating from high school, she began her academic studies in Korean Language at Mahanaim College in Kenya and received a diploma in Korean Language and Culture from Sogang University in Seoul, South Korea. Maria co-founded Korean Enthusiast, a website and Instagram account that organized events for Kenyans interested in Korean media and culture. She continues to combine her love of film, appreciation for Korean culture, and her Kenyan heritage.</p>
+            <p>Maria Gachuhi is a second-year student at Howard Community College...</p>
         </div>
 
-        <!-- Portfolio Section with Horizontal Scroll -->
+        <!-- Portfolio Section -->
         <div class="w3-content w3-padding-64" id="portfolio">
             <h2 class="w3-text-light-grey">PORTFOLIO</h2>
             <hr style="width:200px" class="w3-opacity">
-            <div class="horizontal-scroll">
-                <!-- Example images for the horizontal scroll -->
-                <img src="portfolio1.jpg" alt="Project 1" width="300">
-                <img src="portfolio2.jpg" alt="Project 2" width="300">
-                <img src="portfolio3.jpg" alt="Project 3" width="300">
-                <img src="portfolio4.jpg" alt="Project 4" width="300">
-                <img src="portfolio5.jpg" alt="Project 5" width="300">
-            </div>
+            <!-- Portfolio content -->
         </div>
 
         <!-- Resume Section -->
