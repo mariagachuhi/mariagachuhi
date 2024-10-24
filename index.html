@@ -53,6 +53,16 @@
                 float: none;
             }
         }
+
+        /* Horizontal scroll container styles */
+        .horizontal-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .horizontal-scroll img {
+            display: inline-block;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body class="w3-black">
@@ -85,11 +95,18 @@
             <p>Maria Gachuhi is a second-year student at Howard Community College in Maryland, pursuing her associate’s degree in Audio Video Media Production, where she has been listed on the Dean’s List as an Honors student. She has gained experience in directing, producing, writing, editing, and graphic design. Maria has directed and produced several short films, interviews, and a documentary. Having previously lived in Kenya and South Korea, Maria is fluent in English, Swahili, and Korean. After graduating from high school, she began her academic studies in Korean Language at Mahanaim College in Kenya and received a diploma in Korean Language and Culture from Sogang University in Seoul, South Korea. Maria co-founded Korean Enthusiast, a website and Instagram account that organized events for Kenyans interested in Korean media and culture. She continues to combine her love of film, appreciation for Korean culture, and her Kenyan heritage.</p>
         </div>
 
-        <!-- Portfolio Section -->
+        <!-- Portfolio Section with Horizontal Scroll -->
         <div class="w3-content w3-padding-64" id="portfolio">
             <h2 class="w3-text-light-grey">PORTFOLIO</h2>
             <hr style="width:200px" class="w3-opacity">
-            <!-- Portfolio content -->
+            <div class="horizontal-scroll">
+                <!-- Example images for the horizontal scroll -->
+                <img src="portfolio1.jpg" alt="Project 1" width="300">
+                <img src="portfolio2.jpg" alt="Project 2" width="300">
+                <img src="portfolio3.jpg" alt="Project 3" width="300">
+                <img src="portfolio4.jpg" alt="Project 4" width="300">
+                <img src="portfolio5.jpg" alt="Project 5" width="300">
+            </div>
         </div>
 
         <!-- Resume Section -->
