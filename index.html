@@ -77,6 +77,40 @@
     text-decoration: none; /* Remove underline */
 }
 
+img {
+  width: 100%;
+}
+
+.masonry {
+	column-count: 4;
+	column-gap: 16px;
+}
+
+.masonry .mItem {
+  display: inline-block;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+@media (max-width: 1199px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 991px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
@@ -113,6 +147,70 @@
                 <h3 class="w3-text-light-grey" style="font-size: 23px; font-weight:700 ; text-align: center;">PORTFOLIO</h3>
                 <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
                 <!-- Portfolio content -->
+                <div class="masonry">
+                  <div class="mItem">
+                    <img src="AMAARAE.jpeg" alt="Image 1">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="DC.jpeg" alt="Image 2">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="FERRIS.jpg" alt="Image 3">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="FRIDGE.jpg" alt="Image 4">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="GLADYS.jpg" alt="Image 5">
+                  </div>
+                  <div class="mItem">
+
+                    <img src="LIGHTS.jpg" alt="Image 6">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="NUDAKE.jpg" alt="Image 7">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="PALACE.jpg" alt="Image 8">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="PEEK.jpg" alt="Image 9">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="STATIONPLAZA.jpg" alt="Image 10">
+                  </div>
+                  <div class="mItem">
+                    <img src="STATUE.jpg" alt="Image 11">
+                  </div>
+                  <div class="mItem">
+
+                    <img src="STREET.jpg" alt="Image 12">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="TITAN.jpg" alt="Image 13">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="TITTI.jpg" alt="Image 14">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="TWILIGHT.jpg" alt="Image 15">
+                  </div>
+
+                  <div class="mItem">
+                    <img src="UNDERGROUND.jpg" alt="Image 16">
+                  </div>
+
             </div>
 
             <!-- Resume Section -->
