@@ -167,6 +167,83 @@ img {
   cursor: pointer;
 }
 
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.video-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.video-item:hover .overlay {
+  opacity: 1;
+}
+
+.play-icon {
+  font-size: 36px;
+  color: #fff;
+}
+
+.video-title {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal video {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+
 
     </style>
 </head>
@@ -205,6 +282,43 @@ img {
                 <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
             <!-- Portfolio content -->
 
+            <!-- Video Gallery Section -->
+            <div class="video-gallery">
+              <div class="video-item">
+                <img src="both.jpg" alt="Video 1 Thumbnail" class="thumbnail" data-video-src="BornOfTheHeart_DocuShort.mp4">
+                <div class="overlay">
+                  <span class="play-icon">▶</span>
+                  <p class="video-title">Video Title 1</p>
+                </div>
+              </div>
+              <div class="video-item">
+                <img src="otg.jpg" alt="Video 2 Thumbnail" class="thumbnail" data-video-src="OnTheGreenInterview.mp4">
+                <div class="overlay">
+                  <span class="play-icon">▶</span>
+                  <p class="video-title">Video Title 2</p>
+                </div>
+              </div>
+              <div class="video-item">
+                <img src="smokebomb.jpg" alt="Video 3 Thumbnail" class="thumbnail" data-video-src="SMOKEBOMB.mp4">
+                <div class="overlay">
+                  <span class="play-icon">▶</span>
+                  <p class="video-title">Video Title 3</p>
+                </div>
+              </div>
+              <div class="video-item">
+                <img src="TETHERED.jpg" alt="Video 4 Thumbnail" class="thumbnail" data-video-src="TETHERED.mp4">
+                <div class="overlay">
+                  <span class="play-icon">▶</span>
+                  <p class="video-title">Video Title 4</p>
+                </div>
+              </div>
+
+
+            <!-- Video Modal for Video Playback -->
+            <div class="modal" id="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <video id="modal-video" controls></video>
+            </div>
 
 
                 <!-- Portfolio Photography -->
@@ -303,8 +417,30 @@ img {
         function closeLightbox() {
             document.getElementById("lightbox").style.display = "none";
         }
-        </script>
 
+        // Video Gallery JavaScript
+        document.querySelectorAll('.video-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const videoSrc = item.querySelector('.thumbnail').getAttribute('data-video-src');
+            openModal(videoSrc);
+          });
+        });
+
+        function openModal(videoSrc) {
+          const modal = document.getElementById('modal');
+          const modalVideo = document.getElementById('modal-video');
+          modal.style.display = 'flex';
+          modalVideo.src = videoSrc;
+        }
+
+        function closeModal() {
+          const modal = document.getElementById('modal');
+          const modalVideo = document.getElementById('modal-video');
+          modal.style.display = 'none';
+          modalVideo.src = '';  // Stops video playback when modal closes
+        }
+
+        </script>
 
 
 </body>
