@@ -119,6 +119,44 @@ img {
   }
 }
 
+/* Lightbox overlay styles */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1001;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
     </style>
 </head>
@@ -159,62 +197,62 @@ img {
                 <!-- Portfolio content -->
                 <div class="masonry">
                   <div class="mItem">
-                    <img src="AMAARAE.jpg" alt="Image 1">
+                    <img src="AMAARAE.jpg" alt="Image 1" onclick="openLightbox('AMAARAE.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="DC.jpg" alt="Image 2">
+                    <img src="DC.jpg" alt="Image 2" onclick="openLightbox('DC.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="FERRIS.jpg" alt="Image 3">
+                    <img src="FERRIS.jpg" alt="Image 3" onclick="openLightbox('FERRIS.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="FRIDGE.jpg" alt="Image 4">
+                    <img src="FRIDGE.jpg" alt="Image 4" onclick="openLightbox('FRIDGE.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="GLADYS.jpg" alt="Image 5">
+                    <img src="GLADYS.jpg" alt="Image 5" onclick="openLightbox('GLADYS.jpg')">
                   </div>
                   <div class="mItem">
 
-                    <img src="LIGHTS.jpg" alt="Image 6">
+                    <img src="LIGHTS.jpg" alt="Image 6" onclick="openLightbox('LIGHTS.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="PALACE.jpg" alt="Image 7">
+                    <img src="PALACE.jpg" alt="Image 7" onclick="openLightbox('PALACE.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="PEEK.jpg" alt="Image 8">
+                    <img src="PEEK.jpg" alt="Image 8" onclick="openLightbox('PEEK.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="STATIONPLAZA.jpg" alt="Image 19">
+                    <img src="STATIONPLAZA.jpg" alt="Image 19" onclick="openLightbox('STATIONPLAZA.jpg')">
                   </div>
                   <div class="mItem">
-                    <img src="STATUE.jpg" alt="Image 10">
+                    <img src="STATUE.jpg" alt="Image 10" onclick="openLightbox('STATUE.jpg')">
                   </div>
                   <div class="mItem">
 
-                    <img src="STREET.jpg" alt="Image 11">
+                    <img src="STREET.jpg" alt="Image 11" onclick="openLightbox('STREET.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="TITAN.jpg" alt="Image 12">
+                    <img src="TITAN.jpg" alt="Image 12" onclick="openLightbox('TITAN.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="TITTI.jpg" alt="Image 13">
+                    <img src="TITTI.jpg" alt="Image 13" onclick="openLightbox('TITTI.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="TWILIGHT.jpg" alt="Image 14">
+                    <img src="TWILIGHT.jpg" alt="Image 14" onclick="openLightbox('TWILIGHT.jpg')">
                   </div>
 
                   <div class="mItem">
-                    <img src="UNDERGROUND.jpg" alt="Image 15">
+                    <img src="UNDERGROUND.jpg" alt="Image 15" onclick="openLightbox('UNDERGROUND.jpg')">
                   </div>
 
             </div>
@@ -244,7 +282,23 @@ img {
             <i class="fa fa-instagram w3-hover-opacity"></i>
             <i class="fa fa-linkedin w3-hover-opacity"></i>
         </footer>
-    </div>
+
+        <!-- Lightbox HTML Structure -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img class="lightbox-content" id="lightboxImage">
+        </div>
+
+        <script>
+        function openLightbox(imageSrc) {
+            document.getElementById("lightbox").style.display = "block";
+            document.getElementById("lightboxImage").src = imageSrc;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+        </script>
 
 </body>
 </html>
