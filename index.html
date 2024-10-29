@@ -119,6 +119,16 @@ img {
   }
 }
 
+.masonry .mItem img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.masonry .mItem img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
+}
+
+
 /* Lightbox overlay styles */
 .lightbox {
   display: none; /* Hidden by default */
