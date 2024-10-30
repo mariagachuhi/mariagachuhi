@@ -179,6 +179,96 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Video Gallery styles*/
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
+
+body {
+  font-family: 'Roboto Flex', sans-serif;
+  background-color : #0a0a0a;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.media {
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.media:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+
+.media:hover .overlay {
+  opacity: 1;
+}
+
+img {
+  width: 100%;
+  z-index: -1;
+  margin: auto;
+  transform: scale(1);
+  transition: all ease-in-out 0.5s;
+}
+
+.media:hover img {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
+
+.image-details {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  z-index: 4;
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+
+.media:hover .image-details {
+  top: 40%;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .media {
+    width: 70%;
+    height: 70%;
+  }
+}
+
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
@@ -213,6 +303,33 @@ img {
            <div class="w3-content w3-padding-64" id="portfolio">
              <h3 class="w3-text-light-grey" style="font-size: 23px; font-weight:700; text-align: center;">PORTFOLIO</h3>
              <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
+            </div>
+
+             <!-- Video Gallery Section -->
+             <h1>Gallery</h1>
+ <div class="image-wrapper">
+   <div class="media">
+     <div class="overlay"></div>
+     <img src="both.jpg" alt="">
+     <div class="image-details">
+       <p>Image 1</p>
+     </div>
+   </div>
+   <div class="media">
+     <div class="overlay"></div>
+     <img src="sb.jpg" alt="">
+     <div class="image-details">
+       <p>Image 2</p>
+     </div>
+   </div>
+   <div class="media">
+     <div class="overlay"></div>
+     <img src="otg.jpg" alt="">
+     <div class="image-details">
+       <p>Image 3</p>
+     </div>
+   </div>
+</div>
 
              <div class="portfolio-images">
                <!-- Masonry Photography Section -->
