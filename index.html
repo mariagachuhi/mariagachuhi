@@ -141,6 +141,7 @@ img {
  filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
 }
 
+
 /* Lightbox overlay styles */
 .lightbox {
   display: none; /* Hidden by default */
@@ -178,18 +179,6 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
-
-/* Video Lightbox Styles */
-.lightbox .lightbox-content {
-    max-width: 800px;
-    width: 80%;
-}
-
-.lightbox iframe {
-    max-width: 100%;
-    border: none;
-}
-
 
 /* Video Gallery styles*/
 
@@ -348,15 +337,15 @@ img {
 
 <!-- Image Wrapper Section -->
 <div class="image-wrapper">
-  <div class="media" onclick="openVideoLightbox('https://www.youtube.com/embed/exampleVideoId', 'Born of the Heart', 'A Short Documentary by Maria Gachuhi', 'This film explores.....')">
-    <div class="overlay"></div>
-    <img src="both.jpg" alt="">
-    <div class="image-details">
-        <p class="media-title">"BORN OF THE HEART"</p>
-        <p class="media-year">2023</p>
+   <div class="media">
+       <div class="overlay"></div>
+       <img src="both.jpg" alt="">
+       <div class="image-details">
+           <p class="media-title">"BORN OF THE HEART"</p>
+           <p class="media-year">2023</p>
        </div>
    </div>
-     <div class="media" onclick="openVideoLightbox('https://www.youtube.com/embed/exampleVideoId', 'Smoke Bomb', 'A Music Video by Maria Gachuhi', 'This film explores.....')">
+   <div class="media">
        <div class="overlay"></div>
        <img src="sb.jpg" alt="">
        <div class="image-details">
@@ -364,7 +353,7 @@ img {
            <p class="media-year">2023</p>
        </div>
    </div>
-     <div class="media" onclick="openVideoLightbox('https://www.youtube.com/embed/exampleVideoId', 'On the Green', 'An Interview', 'This film explores.....')">
+   <div class="media">
        <div class="overlay"></div>
        <img src="otg.jpg" alt="">
        <div class="image-details">
@@ -465,18 +454,7 @@ img {
             <img class="lightbox-content" id="lightboxImage">
         </div>
 
-        <!-- Video Lightbox HTML Structure -->
-        <div id="videoLightbox" class="lightbox">
-            <span class="lightbox-close" onclick="closeVideoLightbox()">&times;</span>
-            <div class="lightbox-content" style="text-align: center;">
-                <h2 id="videoTitle" style="color: white; font-size: 24px; font-weight: bold; margin-bottom: 10px;"></h2>
-                <h3 id="videoSubtitle" style="color: silver; font-size: 18px; margin-bottom: 20px;"></h3>
-                <iframe id="videoFrame" style="width: 80%; height: 400px;" frameborder="0" allowfullscreen></iframe>
-                <p id="videoDescription" style="color: white; font-size: 16px; margin-top: 20px;"></p>
-            </div>
-        </div>
 
-    <!-- JavaScript at the end of the body -->
      </div>
         <script>
         function openLightbox(imageSrc) {
@@ -488,7 +466,9 @@ img {
             document.getElementById("lightbox").style.display = "none";
         }
 
+
         </script>
+
 
 </body>
 </html>
