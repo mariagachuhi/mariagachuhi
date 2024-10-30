@@ -296,6 +296,36 @@ img {
     margin: 0;
 }
 
+/*CSS for Modal*/
+      .modal {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+      }
+      .modal-content {
+          position: relative;
+          margin: 10% auto;
+          width: 70%;
+          max-width: 800px;
+      }
+      .close {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          color: white;
+          font-size: 28px;
+          cursor: pointer;
+      }
+      iframe {
+          width: 100%;
+          height: 100%;
+      }
+
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
@@ -337,15 +367,15 @@ img {
 
 <!-- Image Wrapper Section -->
 <div class="image-wrapper">
-   <div class="media">
+   <div class="media" onclick="openVideo('0pw1l4cFpY8')">
        <div class="overlay"></div>
-       <img src="https://youtu.be/0pw1l4cFpY8" alt="">
+       <img src="both.jpg" alt="">
        <div class="image-details">
            <p class="media-title">"BORN OF THE HEART"</p>
            <p class="media-year">2023</p>
        </div>
    </div>
-   <div class="media">
+   <div class="media" onclick="openVideo('sb_video_id')">
        <div class="overlay"></div>
        <img src="sb.jpg" alt="">
        <div class="image-details">
@@ -353,7 +383,7 @@ img {
            <p class="media-year">2023</p>
        </div>
    </div>
-   <div class="media">
+   <div class="media" onclick="openVideo('otg_video_id')">
        <div class="overlay"></div>
        <img src="otg.jpg" alt="">
        <div class="image-details">
@@ -361,6 +391,14 @@ img {
            <p class="media-year">2023</p>
        </div>
    </div>
+</div>
+
+<!-- Modal for Video -->
+<div id="videoModal" class="modal" onclick="closeVideo()">
+    <div class="modal-content">
+        <span class="close" onclick="closeVideo()">&times;</span>
+        <iframe id="videoIframe" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
 </div>
 
 <!-- Masonry Photography Section -->
@@ -465,6 +503,22 @@ img {
         function closeLightbox() {
             document.getElementById("lightbox").style.display = "none";
         }
+
+        <!-- JavaScript Opening and Closing Video Modal -->
+
+              function openVideo(videoId) {
+                  var modal = document.getElementById("videoModal");
+                  var iframe = document.getElementById("videoIframe");
+                  iframe.src = "https://www.youtube.com/embed/" + videoId;
+                  modal.style.display = "block";
+              }
+
+              function closeVideo() {
+                  var modal = document.getElementById("videoModal");
+                  var iframe = document.getElementById("videoIframe");
+                  iframe.src = ""; // Stop the video
+                  modal.style.display = "none";
+              }
 
 
         </script>
