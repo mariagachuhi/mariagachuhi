@@ -205,8 +205,8 @@ h1 {
 }
 
 .media {
-  width: 30%;
-  height: 30%;
+  width: 60%; /* Double the original width */
+  height: 60%; /* Double the original height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,9 +264,36 @@ img {
 
 @media only screen and (max-width: 900px) {
   .media {
-    width: 70%;
-    height: 70%;
+    width: 140%; /* Double the original size in the media query */
+    height: 140%;
   }
+}
+
+/* Styling for Film Section Title */
+.section-title {
+    font-size: 25px; /* Adjusts font size */
+    font-weight: 700;
+    color: white; /* Adjust color as needed */
+    opacity: 0.8; /* Adjusts opacity */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling for Image Titles */
+.media-title {
+    font-size: 25px; /* Larger text for titles */
+    color: white;
+    font-weight: 700;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Styling for Year */
+.media-year {
+    font-size: 20px; /* Smaller text for the year */
+    color: #silver; /* Lighter color for the year */
+    opacity: 0.8;
+    margin: 0;
 }
 
     </style>
@@ -305,37 +332,40 @@ img {
              <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
             </div>
 
-             <!-- Video Gallery Section -->
+    <!-- Film Section Title -->
 <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">FILM</h4>
- <div class="image-wrapper">
+
+<!-- Image Wrapper Section -->
+<div class="image-wrapper">
    <div class="media">
-     <div class="overlay"></div>
-     <img src="both.jpg" alt="">
-     <div class="image-details">
-      <p>"BORN OF THE HEART"</p>
-       <p>"2023"</p>
-     </div>
+       <div class="overlay"></div>
+       <img src="both.jpg" alt="">
+       <div class="image-details">
+           <p class="media-title">"BORN OF THE HEART"</p>
+           <p class="media-year">2023</p>
+       </div>
    </div>
    <div class="media">
-     <div class="overlay"></div>
-     <img src="sb.jpg" alt="">
-     <div class="image-details">
-      <p>"SMOKE BOMB"</p>
-        <p>"2023"</p>
-     </div>
+       <div class="overlay"></div>
+       <img src="sb.jpg" alt="">
+       <div class="image-details">
+           <p class="media-title">"SMOKE BOMB"</p>
+           <p class="media-year">2023</p>
+       </div>
    </div>
    <div class="media">
-     <div class="overlay"></div>
-     <img src="otg.jpg" alt="">
-     <div class="image-details">
-      <p>"ON THE GREEN"</p>
-       <p>"2023"</p>
-     </div>
+       <div class="overlay"></div>
+       <img src="otg.jpg" alt="">
+       <div class="image-details">
+           <p class="media-title">"ON THE GREEN"</p>
+           <p class="media-year">2023</p>
+       </div>
    </div>
 </div>
+
+<!-- Masonry Photography Section -->
        <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">PHOTOGRAPHY</h4>
              <div class="portfolio-images">
-               <!-- Masonry Photography Section -->
                <div class="masonry">
                  <div class="mItem">
                     <img src="DC.jpg" alt="Image 1" onclick="openLightbox('DC.jpg')">
