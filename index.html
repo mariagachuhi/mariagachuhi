@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Maria Gachuhi</title>
+    <title>Maria Gachuhi</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favi.png" type="image/png">
-
-    <!-- Consolidated Font Import -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Other styles and links remain the same -->
@@ -23,43 +24,48 @@
         #main {margin-left: 120px;}
         /* Other styles remain the same */
 
-        /* General Body & Header Styling */
-             body, h1, h2, h3, h4, h5, h6 {
-                 font-family: 'Roboto Flex', sans-serif;
-             }
-             body {
-                 background-color: #0a0a0a;
-                 color: silver;
-             }
+        /* Header styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            padding: 10px 5px;
+        }
+        .header a {
+            float: left;
+            color: #C0C0C0;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight:700 ;
+            line-height: 20px;
+        }
+        .header a.logo {
+            font-size: 18px;
+            font-weight:800 ;
+        }
+        .header a:hover {
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .header-right {
+            float: right;
+        }
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .header-right {
+                float: none;
+            }
+        }
 
-             .header {
-                 position: fixed;
-                 top: 0;
-                 width: 100%;
-                 background-color: #0a0a0a;
-                 padding: 10px 5px;
-             }
-             .header a, .header a.logo {
-                 color: #C0C0C0;
-                 text-decoration: none;
-                 font-weight: 700;
-                 padding: 10px;
-             }
-             .header a:hover {
-                 color: white;
-             }
-             .header-right {
-                 float: right;
-             }
-
-             /* Responsive Header */
-             @media screen and (max-width: 500px) {
-                 .header a, .header-right {
-                     float: none;
-                     display: block;
-                     text-align: left;
-                 }
-             }
         /* Add padding to the top of the content to avoid overlapping with the sticky header */
         #main {
             padding-top: 20px; /* Adjust the padding value according to the header height */
@@ -88,73 +94,91 @@ img {
 
 /* General styles remain unchanged */
 
-/* Portfolio Section */
-     .portfolio-images {
-         max-width: 1000px;
-         margin: 0 auto;
-     }
-     .portfolio-images .masonry {
-         column-count: 4;
-         column-gap: 16px;
-     }
-     .portfolio-images .masonry .mItem {
-         display: inline-block;
-         break-inside: avoid;
-         margin-bottom: 16px;
-     }
+/* Portfolio section wrapper */
+.portfolio-images {
+ max-width: 1000px;
+ margin: 0 auto;
+}
 
-     /* Responsive Portfolio Columns */
-     @media (max-width: 1199px) {
-         .portfolio-images .masonry {
-             column-count: 3;
-         }
-     }
-     @media (max-width: 991px) {
-         .portfolio-images .masonry {
-             column-count: 2;
-         }
-     }
-     @media (max-width: 767px) {
-         .portfolio-images .masonry {
-             column-count: 1;
-         }
-     }
+/* Updated Masonry grid styling */
+.portfolio-images .masonry {
+ column-count: 4;
+ column-gap: 16px;
+}
 
-     /* Gallery Image Styling */
-     .portfolio-images .masonry .mItem img {
-         width: 100%;
-         transition: transform 0.3s ease, filter 0.3s ease;
-     }
-     .portfolio-images .masonry .mItem img:hover {
-         transform: scale(1.05);
-         filter: brightness(70%);
-     }
+.portfolio-images .masonry .mItem {
+ display: inline-block; /* Ensures items display correctly in columns */
+ break-inside: avoid; /* Prevents items from breaking across columns */
+ margin-bottom: 16px;
+}
 
-     /* Lightbox Overlay */
-     .lightbox {
-         display: none;
-         position: fixed;
-         z-index: 1001;
-         padding-top: 60px;
-         left: 0;
-         top: 0;
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0, 0, 0, 0.9);
-     }
-     .lightbox-content {
-         width: 80%;
-         max-width: 700px;
-         margin: auto;
-     }
-     .lightbox-close {
-         position: absolute;
-         top: 15px;
-         right: 35px;
-         color: #fff;
-         font-size: 40px;
-         cursor: pointer;
-     }
+@media (max-width: 1199px) {
+ .portfolio-images .masonry {
+   column-count: 3;
+ }
+}
+
+@media (max-width: 991px) {
+ .portfolio-images .masonry {
+   column-count: 2;
+ }
+}
+
+@media (max-width: 767px) {
+ .portfolio-images .masonry {
+   column-count: 1;
+ }
+}
+
+/* Additional styling for images */
+.portfolio-images .masonry .mItem img {
+ width: 100%;
+ transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.portfolio-images .masonry .mItem img:hover {
+ transform: scale(1.05); /* Slightly enlarges the image */
+ filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
+}
+
+
+/* Lightbox overlay styles */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1001;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* Video Gallery styles*/
 
@@ -165,9 +189,9 @@ body {
   background-color : #0a0a0a;
 }
 
-h4 {
-  color: silver;
-  font-size: 20px;
+h1 {
+  color: white;
+  font-size: 36px;
   text-align: center;
 }
 
@@ -175,22 +199,24 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1000px; /* Match portfolio section width */
-  margin: 0 auto 50px; /* Centering and spacing */
+  width: 60%;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
 .media {
-  width: 45%; /* Adjust width for better alignment */
-  height: auto; /* Allow automatic height scaling */
-  margin: 16px; /* Consistent spacing */
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
   overflow: hidden;
   position: relative;
 }
 
-.media img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for scaling */
+.media:hover {
+  cursor: pointer;
 }
 
 .overlay {
@@ -198,28 +224,12 @@ h4 {
   position: absolute;
   height: 100%;
   width: 100%;
+  z-index: 3;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all ease-in-out 0.5s;
 }
 
 .media:hover .overlay {
-  opacity: 1;
-}
-
-.image-details {
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
-  position: absolute;
-  top: 50%; /* Center text */
-  left: 50%; /* Center text */
-  transform: translate(-50%, -50%); /* Offset to true center */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.media:hover .image-details {
   opacity: 1;
 }
 
@@ -240,7 +250,6 @@ img {
   text-align: center;
   color: white;
   font-size: 20px;
-  font-weight: 700;
   z-index: 4;
   position: absolute;
   top: 100%;
@@ -264,16 +273,16 @@ img {
 </head>
 <body style="background-color: #0a0a0a;">
 
-  <div class="header">
-    <a href="#home" class="logo">MARIA GACHUHI</a>
-    <div class="header-right">
-        <ul style="list-style-type: none; margin: 0; padding: 0;">
-            <li style="display: inline;"><a href="#about">ABOUT</a></li>
-            <li style="display: inline;"><a href="#portfolio">PORTFOLIO</a></li>
-            <li style="display: inline;"><a href="#contact">CONTACT</a></li>
-        </ul>
+    <div class="header">
+        <a href="#home" class="logo">MARIA GACHUHI</a>
+        <div class="header-right">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li style="display: inline;"><a href="#about">ABOUT</a></li>
+                <li style="display: inline;"><a href="#portfolio">PORTFOLIO</a></li>
+                <li style="display: inline;"><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
     </div>
-</div>
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="home">
@@ -303,24 +312,21 @@ img {
      <div class="overlay"></div>
      <img src="both.jpg" alt="">
      <div class="image-details">
-       <p>"BORN OF THE HEART"</p>
-       <div class="w3-opacity"><p>2023</p>
+       <p>BORN OF THE HEART</p>
      </div>
    </div>
    <div class="media">
      <div class="overlay"></div>
      <img src="sb.jpg" alt="">
      <div class="image-details">
-       <p>"SMOKE BOMB"</p>
-       <div class="w3-opacity"><p>2023</p>
+       <p>SMOKE BOMB</p>
      </div>
    </div>
    <div class="media">
      <div class="overlay"></div>
      <img src="otg.jpg" alt="">
      <div class="image-details">
-      <p>"ON THE GREEN"</p>
-       <div class="w3-opacity"><p>2023</p>
+       <p>ON THE GREEN</p>
      </div>
    </div>
 </div>
