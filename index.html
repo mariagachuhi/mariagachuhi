@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Other styles and links remain the same -->
+
     <style>
         body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto Flex", sans-serif;}
         body {
@@ -89,45 +92,57 @@ img {
   margin-left: 50px;
 }
 
-/* Masonry grid styling */
-.masonry {
-  column-count: 4;
-  column-gap: 16px;
-}
+/* General styles remain unchanged */
 
-.masonry .mItem {
-  display: inline-block;
-  margin-bottom: 16px;
-  width: 100%;
-}
+ /* Masonry grid styling for portfolio images */
+ .portfolio-images .masonry {
+   column-count: 4;
+   column-gap: 16px;
+ }
 
-@media (max-width: 1199px) {
-  .masonry {
-    column-count: 3;
-  }
-}
+ .portfolio-images .masonry .mItem {
+   display: inline-block;
+   margin-bottom: 16px;
+   width: 100%;
+ }
 
-@media (max-width: 991px) {
-  .masonry {
-    column-count: 2;
-  }
-}
+ @media (max-width: 1199px) {
+   .portfolio-images .masonry {
+     column-count: 3;
+   }
+ }
 
-@media (max-width: 767px) {
-  .masonry {
-    column-count: 1;
-  }
-}
+ @media (max-width: 991px) {
+   .portfolio-images .masonry {
+     column-count: 2;
+   }
+ }
 
-.masonry .mItem img {
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
+ @media (max-width: 767px) {
+   .portfolio-images .masonry {
+     column-count: 1;
+   }
+ }
 
-.masonry .mItem img:hover {
-    transform: scale(1.05); /* Slightly enlarges the image */
-    filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
-}
+ .portfolio-images .masonry .mItem img {
+     transition: transform 0.3s ease, filter 0.3s ease;
+ }
 
+ .portfolio-images .masonry .mItem img:hover {
+     transform: scale(1.05); /* Slightly enlarges the image */
+     filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
+ }
+
+ /* Video Gallery and Download Button - ensure no masonry styles affect these */
+ .video-gallery {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 20px;
+   max-width: 1000px;
+   margin: 20px auto;
+ }
+
+ /* Other video gallery and modal styles remain unchanged */
 
 /* Lightbox overlay styles */
 .lightbox {
@@ -275,14 +290,14 @@ img {
                 </div>
             </div>
 
+ <!-- Header, About, and other sections remain the same -->
 
-          <!-- Portfolio Section -->
-            <div class="w3-content w3-padding-64" id="portfolio">
-                <h3 class="w3-text-light-grey" style="font-size: 23px; font-weight:700 ; text-align: center;">PORTFOLIO</h3>
-                <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
-            <!-- Portfolio content -->
+ <!-- Portfolio Section -->
+      <div class="w3-content w3-padding-64" id="portfolio">
+          <h3 class="w3-text-light-grey" style="font-size: 23px; font-weight:700; text-align: center;">PORTFOLIO</h3>
+          <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
 
-            <!-- Video Gallery Section -->
+<!-- Video Gallery Section (Unaffected by Masonry) -->
             <div class="video-gallery">
               <div class="video-item">
                 <img src="both.jpg" alt="Video 1 Thumbnail" class="thumbnail" data-video-src="BornOfTheHeart_DocuShort.mp4">
@@ -310,6 +325,7 @@ img {
                 <div class="overlay">
                   <span class="play-icon">▶</span>
                   <p class="video-title">Video Title 4</p>
+                <!-- Video items remain the same -->
                 </div>
               </div>
 
@@ -321,7 +337,7 @@ img {
             </div>
 
 
-                <!-- Portfolio Photography -->
+      <!-- Portfolio Photography Section with Masonry -->
                 <div class="masonry">
 
                   <div class="mItem">
@@ -378,8 +394,11 @@ img {
                   <div class="mItem">
                     <img src="UNDERGROUND.jpg" alt="Image 14" onclick="openLightbox('UNDERGROUND.jpg')">
                   </div>
+   <!-- Image items remain the same -->
 
             </div>
+
+                <!-- Resume Download Button (Unaffected by Masonry) -->
                 <a href="Maria Gachuhi Resume.pdf" download class="w3-button w3-light-grey w3-padding-large w3-section">
                     <i class="fa fa-download"></i> Download Resume
                 </a>
@@ -408,6 +427,9 @@ img {
             <img class="lightbox-content" id="lightboxImage">
         </div>
 
+                <!-- Contact Section and Footer remain unchanged -->
+
+     </div>
         <script>
         function openLightbox(imageSrc) {
             document.getElementById("lightbox").style.display = "block";
