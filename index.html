@@ -94,55 +94,53 @@ img {
 
 /* General styles remain unchanged */
 
- /* Masonry grid styling for portfolio images */
+/* Portfolio section wrapper */
+.portfolio-images {
+ max-width: 1000px;
+ margin: 0 auto;
+}
+
+/* Updated Masonry grid styling */
+.portfolio-images .masonry {
+ column-count: 4;
+ column-gap: 16px;
+}
+
+.portfolio-images .masonry .mItem {
+ display: inline-block; /* Ensures items display correctly in columns */
+ break-inside: avoid; /* Prevents items from breaking across columns */
+ margin-bottom: 16px;
+}
+
+@media (max-width: 1199px) {
  .portfolio-images .masonry {
-   column-count: 4;
-   column-gap: 16px;
+   column-count: 3;
  }
+}
 
- .portfolio-images .masonry .mItem {
-   display: inline-block;
-   margin-bottom: 16px;
-   width: 100%;
+@media (max-width: 991px) {
+ .portfolio-images .masonry {
+   column-count: 2;
  }
+}
 
- @media (max-width: 1199px) {
-   .portfolio-images .masonry {
-     column-count: 3;
-   }
+@media (max-width: 767px) {
+ .portfolio-images .masonry {
+   column-count: 1;
  }
+}
 
- @media (max-width: 991px) {
-   .portfolio-images .masonry {
-     column-count: 2;
-   }
- }
+/* Additional styling for images */
+.portfolio-images .masonry .mItem img {
+ width: 100%;
+ transition: transform 0.3s ease, filter 0.3s ease;
+}
 
- @media (max-width: 767px) {
-   .portfolio-images .masonry {
-     column-count: 1;
-   }
- }
+.portfolio-images .masonry .mItem img:hover {
+ transform: scale(1.05); /* Slightly enlarges the image */
+ filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
+}
 
- .portfolio-images .masonry .mItem img {
-     transition: transform 0.3s ease, filter 0.3s ease;
- }
-
- .portfolio-images .masonry .mItem img:hover {
-     transform: scale(1.05); /* Slightly enlarges the image */
-     filter: brightness(70%); /* Darkens the image for a subtle overlay effect */
- }
-
- /* Video Gallery and Download Button - ensure no masonry styles affect these */
- .video-gallery {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   gap: 20px;
-   max-width: 1000px;
-   margin: 20px auto;
- }
-
- /* Other video gallery and modal styles remain unchanged */
 
 /* Lightbox overlay styles */
 .lightbox {
@@ -181,8 +179,6 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
-
-
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
@@ -213,18 +209,15 @@ img {
                 </div>
             </div>
 
+            <!-- Portfolio Section -->
+           <div class="w3-content w3-padding-64" id="portfolio">
+             <h3 class="w3-text-light-grey" style="font-size: 23px; font-weight:700; text-align: center;">PORTFOLIO</h3>
+             <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
 
-
- <!-- Portfolio Section -->
-      <div class="w3-content w3-padding-64" id="portfolio">
-          <h3 class="w3-text-light-grey" style="font-size: 23px; font-weight:700; text-align: center;">PORTFOLIO</h3>
-          <hr style="width:150px; margin: 0 auto 20px;" class="w3-opacity">
-
-
-
-      <!-- Portfolio Photography Section with Masonry -->
-                <div class="masonry">
-                  <div class="mItem">
+             <div class="portfolio-images">
+               <!-- Masonry Photography Section -->
+               <div class="masonry">
+                 <div class="mItem">
                     <img src="DC.jpg" alt="Image 1" onclick="openLightbox('DC.jpg')">
                   </div>
 
@@ -279,9 +272,11 @@ img {
                     <img src="UNDERGROUND.jpg" alt="Image 14" onclick="openLightbox('UNDERGROUND.jpg')">
                   </div>
             </div>
+        </div>
 
-                <!-- Resume Download Button (Unaffected by Masonry) -->
-                <a href="Maria Gachuhi Resume.pdf" download class="w3-button w3-light-grey w3-padding-large w3-section">
+    <!-- Resume Download Button (Unaffected by Masonry) -->
+             </div>
+            <a href="Maria Gachuhi Resume.pdf" download class="w3-button w3-light-grey w3-padding-large w3-section">
                     <i class="fa fa-download"></i> Download Resume
                 </a>
             </div>
