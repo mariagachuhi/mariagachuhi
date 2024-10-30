@@ -180,6 +180,23 @@ img {
   cursor: pointer;
 }
 
+/*Lightbox style for image wrapper sectiononly*/
+.lightbox-inner-content {
+  text-align: center;
+  color: white;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.lightbox h2, .lightbox h4, .lightbox p {
+  margin: 10px 0;
+}
+
+.lightbox iframe {
+  max-width: 100%;
+}
+
+
 /* Video Gallery styles*/
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
@@ -337,30 +354,30 @@ img {
 
 <!-- Image Wrapper Section -->
 <div class="image-wrapper">
-   <div class="media">
-       <div class="overlay"></div>
-       <img src="both.jpg" alt="">
-       <div class="image-details">
-           <p class="media-title">"BORN OF THE HEART"</p>
-           <p class="media-year">2023</p>
-       </div>
-   </div>
-   <div class="media">
-       <div class="overlay"></div>
-       <img src="sb.jpg" alt="">
-       <div class="image-details">
-           <p class="media-title">"SMOKE BOMB"</p>
-           <p class="media-year">2023</p>
-       </div>
-   </div>
-   <div class="media">
-       <div class="overlay"></div>
-       <img src="otg.jpg" alt="">
-       <div class="image-details">
-           <p class="media-title">"ON THE GREEN"</p>
-           <p class="media-year">2023</p>
-       </div>
-   </div>
+  <div class="media" onclick="openLightbox('yourYoutubeVideoId', 'Born of the Heart', '2023', 'A powerful short film about...')">
+      <div class="overlay"></div>
+      <img src="both.jpg" alt="">
+      <div class="image-details">
+          <p class="media-title">"BORN OF THE HEART"</p>
+          <p class="media-year">2023</p>
+      </div>
+  </div>
+  <div class="media" onclick="openLightbox('yourYoutubeVideoId', 'Smoke Bomb', '2023', 'A powerful short film about...')">
+    <div class="overlay"></div>
+    <img src="sb.jpg" alt="">
+    <div class="image-details">
+        <p class="media-title">"SMOKE BOMB"</p>
+        <p class="media-year">2023</p>
+    </div>
+</div>
+<div class="media" onclick="openLightbox('yourYoutubeVideoId', 'On the Green', '2023', 'A powerful short film about...')">
+  <div class="overlay"></div>
+  <img src="otg.jpg" alt="">
+  <div class="image-details">
+      <p class="media-title">"ON THE GREEN"</p>
+      <p class="media-year">2023</p>
+  </div>
+</div>
 </div>
 
 <!-- Masonry Photography Section -->
@@ -454,18 +471,32 @@ img {
             <img class="lightbox-content" id="lightboxImage">
         </div>
 
+        <!-- Lightbox HTML Structure -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-inner-content">
+                <h2 id="lightboxTitle">Video Title</h2>
+                <h4 id="lightboxSubtitle">Subtitle or Description</h4>
+                <iframe id="lightboxVideo" width="100%" height="400" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p id="lightboxText" style="color: white;">Text description goes here.</p>
+            </div>
+        </div>
+
 
      </div>
         <script>
-        function openLightbox(imageSrc) {
+        function openLightbox(videoId, title, subtitle, text) {
             document.getElementById("lightbox").style.display = "block";
-            document.getElementById("lightboxImage").src = imageSrc;
+            document.getElementById("lightboxVideo").src = `https://www.youtube.com/embed/${videoId}`;
+            document.getElementById("lightboxTitle").textContent = title;
+            document.getElementById("lightboxSubtitle").textContent = subtitle;
+            document.getElementById("lightboxText").textContent = text;
         }
 
         function closeLightbox() {
             document.getElementById("lightbox").style.display = "none";
+            document.getElementById("lightboxVideo").src = "";  // Stop video on close
         }
-
 
         </script>
 
