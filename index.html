@@ -328,28 +328,29 @@ img {
       }
 
       /* Graphic Design Section Styles */
-  .graphic-design-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 20px;
-  }
+      .graphic-design-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          margin-top: 20px;
+      }
 
-  .graphic-design-container .gItem {
-      flex-basis: 60%; /* Each image will take up about 60% of the row */
-      margin: 1px; /* Adjusts spacing between images */
-  }
+      .graphic-design-container .gItem {
+          flex-basis: 30%; /* Adjusts so that 3 items can fit in a row */
+          margin: 10px; /* Adjusts spacing between images */
+      }
 
-  .graphic-design-container .gItem img {
-      width:30%; /* Ensures image takes up the entire width of its container */
-      height: auto;
-      transition: transform 0.3s ease, filter 0.3s ease;
-  }
+      .graphic-design-container .gItem img {
+          width: 100%; /* Ensures the image takes up the entire width of its container */
+          height: auto;
+          transition: transform 0.3s ease, filter 0.3s ease;
+      }
 
-  .graphic-design-container .gItem img:hover {
-      transform: scale(1.05);
-      filter: brightness(70%);
-  }
+      .graphic-design-container .gItem img:hover {
+          transform: scale(1.05);
+          filter: brightness(70%);
+      }
+
 
     </style>
 </head>
