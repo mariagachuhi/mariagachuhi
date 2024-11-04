@@ -327,23 +327,29 @@ img {
           height: 100%;
       }
 
-      /* Create two equal columns that floats next to each other */
-    .column {
-      float: left;
-      width: 30%;
-      padding: 10px;
-    }
+      /* Graphic Design Section Styles */
+  .graphic-design-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+  }
 
-    .column img {
-      margin-top: 12px;
-    }
+  .graphic-design-container .gItem {
+      flex-basis: 50%; /* Adjust so that 5 graphic design images can fit in a row */
+      margin: 5px; /* Adjusts spacing between images */
+  }
 
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+  .graphic-design-container .gItem img {
+      width:50%; /* Ensures image takes up the entire width of its container */
+      height: auto;
+      transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .graphic-design-container .gItem img:hover {
+      transform: scale(1.05);
+      filter: brightness(70%);
+  }
 
     </style>
 </head>
@@ -543,15 +549,17 @@ img {
                   </div>
               </div>
 
-              <!-- Photo Grid -->
+              <!-- Graphic Design Section -->
               <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">GRAPHIC DESIGN</h4>
-              <div class="row">
-                <div class="column">
-                <img src="MAGAZINECOVER.jpg" style="width:100%" alt="Graphic Design Image 1" onclick="openLightbox('MAGAZINECOVER.jpg')">
-                <img src="VINYLALBUMCOVER.jpg" style="width:100%" alt="Graphic Design Image 2" onclick="openLightbox('VINYLALBUMCOVER.jpg')">
+              <div class="graphic-design-container">
+                  <div class="gItem">
+                      <img src="MAGAZINECOVER.jpg" alt="Graphic Design Image 1" onclick="openLightbox('MAGAZINECOVER.jpg')">
+                  </div>
+                  <div class="gItem">
+                      <img src="VINYLALBUMCOVER.jpg" alt="Graphic Design Image 2" onclick="openLightbox('VINYLALBUMCOVER.jpg')">
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
     <!-- Resume Download Button (Unaffected by Masonry) -->
     <div style="text-align: center; margin-top: 20px;">
