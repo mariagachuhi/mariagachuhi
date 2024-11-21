@@ -371,28 +371,21 @@ img {
           <ul style="list-style-type: none; margin: 0; padding: 0;">
               <li style="display: inline;"><a href="#about">ABOUT</a></li>
               <li style="display: inline; position: relative;">
-                  <a href="#portfolio" style="cursor: pointer;">PORTFOLIO ▼</a>
-                  <ul style="
-                      display: none;
-                      position: absolute;
-                      background-color: #0a0a0a;
-                      margin: 0;
-                      padding: 0;
-                      list-style-type: none;
-                      z-index: 1000;
-                      min-width: 150px;
-                      length: 300px">
-                      <li><a href="#film" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Film</a></li>
-                      <li><a href="#photography" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Photography</a></li>
-                      <li><a href="#sound-design" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Sound Design</a></li>
-                      <li><a href="#digital-art" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Digital Art</a></li>
-                      <li><a href="#graphic-design" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Graphic Design</a></li>
+                  <a href="#portfolio">PORTFOLIO</a>
+                  <!-- Dropdown menu -->
+                  <ul style="display: none; position: absolute; top: 100%; left: 0; background-color: #0a0a0a; list-style: none; margin: 0; padding: 10px; border: 1px solid #555;">
+                      <li style="margin: 5px 0;"><a href="#film" style="color: #C0C0C0; text-decoration: none;">Film</a></li>
+                      <li style="margin: 5px 0;"><a href="#photography" style="color: #C0C0C0; text-decoration: none;">Photography</a></li>
+                      <li style="margin: 5px 0;"><a href="#sound-design" style="color: #C0C0C0; text-decoration: none;">Sound Design</a></li>
+                      <li style="margin: 5px 0;"><a href="#digital-art" style="color: #C0C0C0; text-decoration: none;">Digital Art</a></li>
+                      <li style="margin: 5px 0;"><a href="#graphic-design" style="color: #C0C0C0; text-decoration: none;">Graphic Design</a></li>
                   </ul>
               </li>
               <li style="display: inline;"><a href="#contact">CONTACT</a></li>
           </ul>
       </div>
   </div>
+
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="home">
@@ -652,14 +645,14 @@ img {
                   modal.style.display = "none";
               }
 
-              document.querySelector('.header-right li:nth-child(2)').addEventListener('mouseover', function() {
-                    this.querySelector('ul').style.display = 'block';
-                });
+              // Show/hide dropdown menu on hover
+              document.querySelector('.header-right > ul > li:nth-child(2)').addEventListener('mouseenter', function() {
+                  this.querySelector('ul').style.display = 'block';
+              });
 
-                document.querySelector('.header-right li:nth-child(2)').addEventListener('mouseleave', function() {
-                    this.querySelector('ul').style.display = 'none';
-                });
-
+              document.querySelector('.header-right > ul > li:nth-child(2)').addEventListener('mouseleave', function() {
+                  this.querySelector('ul').style.display = 'none';
+              });
         </script>
 
 
