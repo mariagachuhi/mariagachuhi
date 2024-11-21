@@ -364,11 +364,13 @@ img {
   }
 
   .about-images {
-      flex: 1; /* Image section takes up half the container */
-      display: flex;
-      flex-direction: column; /* Stack the images vertically */
-      gap: 20px; /* Space between the images */
+      flex: 1; /* Image section adjusts flexibly */
+      display: flex; /* Enable flexbox for image layout */
+      flex-direction: row; /* Align images horizontally */
+      gap: 20px; /* Add space between the images */
+      justify-content: flex-start; /* Align images to the start */
   }
+
 
   .about-img {
       max-width: 200px; /* Ensure the images are responsive */
@@ -376,9 +378,10 @@ img {
   }
 
   @media (max-width: 768px) {
-      .about-flex-container {
-          flex-direction: column; /* Stack the text and images vertically on smaller screens */
+      .about-images {
+          flex-direction: column; /* Stack images vertically */
       }
+  }
 
       .about-text {
           padding-right: 0;
@@ -418,9 +421,9 @@ img {
                         <p>Maria Gachuhi is a second-year student at Howard Community College in Maryland, pursuing her associate’s degree in Audio Video Media Production, where she has been listed on the Dean’s List as an Honors student. She has gained experience in directing, producing, writing, editing, and graphic design. Maria has directed and produced several short films, interviews, and a documentary. Having previously lived in Kenya and South Korea, Maria is fluent in Swahili and Korean. After graduating from high school, she began her academic studies in Korean Language at Mahanaim College in Kenya and received a diploma in Korean Language and Culture from Sogang University in Seoul, South Korea. Maria co-founded Korean Enthusiast, a website and Instagram account that organized events for Kenyans interested in Korean media and culture. She continues to combine her love of film, appreciation for Korean culture, and her Kenyan heritage.</p>
                     </div>
                     <!-- Image Section -->
-                    <div class="about-images" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
-                        <img src="MariaGachuhiPP.jpg" alt="Maria Gachuhi Headshot" class="about-img">
-                        <img src="mariapp.jpg" alt="Maria Gachuhi Secondary Image" class="about-img">
+                    <div class="about-images" style="flex: 1; display: flex; flex-direction: row; gap: 20px;">
+                        <img src="mariapp.jpg" alt="Maria Gachuhi Headshot" class="about-img">
+                        <img src="MariaGachuhiPP.jpg" alt="Maria Gachuhi Secondary Image" class="about-img">
                     </div>
                 </div>
             </div>
