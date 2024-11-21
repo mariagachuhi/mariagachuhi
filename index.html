@@ -355,21 +355,20 @@ img {
       flex: 1; /* Images section adjusts flexibly */
       display: flex; /* Enable flexbox */
       flex-direction: row; /* Align images side by side */
-      gap: 20px; /* Space between images */
+      gap: 10px; /* Space between images */
       position: relative; /* Allow for overlapping */
   }
 
   .about-img {
       max-width: 300px; /* Adjust the image size */
       border-radius: 50%; /* Optional: Rounded corners */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
       position: relative; /* Allow precise positioning */
       z-index: 1; /* Adjust stacking order */
   }
 
   .about-img:nth-child(2) {
-      margin-left: -50px; /* Overlap the second image */
-      z-index: 2; /* Bring it on top of the first image */
+      margin-left: -20px; /* Overlap the second image */
+      z-index: 1; /* Bring it on top of the first image */
   }
 
   @media (max-width: 768px) {
