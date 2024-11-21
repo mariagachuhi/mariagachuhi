@@ -351,37 +351,43 @@ img {
       filter: brightness(70%);
   }
 
+  .about-flex-container {
+      display: flex;
+      align-items: flex-start; /* Align items to the top */
+      justify-content: space-between; /* Space out the text and image sections */
+      gap: 20px;
+  }
+
+  .about-text {
+      flex: 1; /* Text section takes up half the container */
+      padding-right: 20px;
+  }
+
   .about-images {
-      flex: 1; /* Images section adjusts flexibly */
-      display: flex; /* Enable flexbox */
-      flex-direction: row; /* Align images side by side */
-      gap: 10px; /* Space between images */
-      position: relative; /* Allow for overlapping */
+      flex: 1; /* Image section takes up half the container */
+      display: flex;
+      flex-direction: column; /* Stack the images vertically */
+      gap: 20px; /* Space between the images */
   }
 
   .about-img {
-      max-width: 300px; /* Adjust the image size */
-      border-radius: 50%; /* Optional: Rounded corners */
-      position: relative; /* Allow precise positioning */
-      z-index: 1; /* Adjust stacking order */
-  }
-
-  .about-img:nth-child(2) {
-      margin-left: -20px; /* Overlap the second image */
-      z-index: 1; /* Bring it on top of the first image */
+      max-width: 200px; /* Ensure the images are responsive */
+      border-radius: 15px; /* Optional: Add rounded corners */
   }
 
   @media (max-width: 768px) {
-      .about-images {
-          flex-direction: column; /* Stack images vertically */
+      .about-flex-container {
+          flex-direction: column; /* Stack the text and images vertically on smaller screens */
       }
 
-      .about-img:nth-child(2) {
-          margin-left: 0; /* Reset overlap on small screens */
+      .about-text {
+          padding-right: 0;
+      }
+
+      .about-images {
+          align-items: center; /* Center images on smaller screens */
       }
   }
-
-
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
@@ -412,9 +418,9 @@ img {
                         <p>Maria Gachuhi is a second-year student at Howard Community College in Maryland, pursuing her associate’s degree in Audio Video Media Production, where she has been listed on the Dean’s List as an Honors student. She has gained experience in directing, producing, writing, editing, and graphic design. Maria has directed and produced several short films, interviews, and a documentary. Having previously lived in Kenya and South Korea, Maria is fluent in Swahili and Korean. After graduating from high school, she began her academic studies in Korean Language at Mahanaim College in Kenya and received a diploma in Korean Language and Culture from Sogang University in Seoul, South Korea. Maria co-founded Korean Enthusiast, a website and Instagram account that organized events for Kenyans interested in Korean media and culture. She continues to combine her love of film, appreciation for Korean culture, and her Kenyan heritage.</p>
                     </div>
                     <!-- Image Section -->
-                    <div class="about-images" style="flex: 1; display: flex; flex-direction: row; gap: 20px; position: relative;">
-                        <img src="mariapp.jpg" alt="Maria Gachuhi Headshot" class="about-img">
-                        <img src="MariaGachuhiPP.jpg" alt="Maria Gachuhi Secondary Image" class="about-img">
+                    <div class="about-images" style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+                        <img src="MariaGachuhiPP.jpg" alt="Maria Gachuhi Headshot" class="about-img">
+                        <img src="mariapp.jpg" alt="Maria Gachuhi Secondary Image" class="about-img">
                     </div>
                 </div>
             </div>
