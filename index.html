@@ -351,20 +351,47 @@ img {
       filter: brightness(70%);
   }
 
+  .header-right li ul li a:hover {
+    background-color: #333;
+    color: white;
+}
+
+.header-right li ul li {
+    border-bottom: 1px solid #444;
+}
+
+
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
 
-    <div class="header">
-        <a href="#home" class="logo">MARIA GACHUHI</a>
-        <div class="header-right">
-            <ul style="list-style-type: none; margin: 0; padding: 0;">
-                <li style="display: inline;"><a href="#about">ABOUT</a></li>
-                <li style="display: inline;"><a href="#portfolio">PORTFOLIO</a></li>
-                <li style="display: inline;"><a href="#contact">CONTACT</a></li>
-            </ul>
-        </div>
-    </div>
+  <div class="header">
+      <a href="#home" class="logo">MARIA GACHUHI</a>
+      <div class="header-right">
+          <ul style="list-style-type: none; margin: 0; padding: 0;">
+              <li style="display: inline;"><a href="#about">ABOUT</a></li>
+              <li style="display: inline; position: relative;">
+                  <a href="#portfolio" style="cursor: pointer;">PORTFOLIO ▼</a>
+                  <ul style="
+                      display: none;
+                      position: absolute;
+                      background-color: #222;
+                      margin: 0;
+                      padding: 0;
+                      list-style-type: none;
+                      z-index: 1000;
+                      min-width: 150px;">
+                      <li><a href="#film" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Film</a></li>
+                      <li><a href="#photography" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Photography</a></li>
+                      <li><a href="#sound-design" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Sound Design</a></li>
+                      <li><a href="#digital-art" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Digital Art</a></li>
+                      <li><a href="#graphic-design" style="display: block; padding: 10px; color: #C0C0C0; text-decoration: none;">Graphic Design</a></li>
+                  </ul>
+              </li>
+              <li style="display: inline;"><a href="#contact">CONTACT</a></li>
+          </ul>
+      </div>
+  </div>
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="home">
@@ -388,7 +415,8 @@ img {
             </div>
 
     <!-- Film Section Title -->
-<h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">FILM</h4>
+    <div id="film">
+        <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">FILM</h4>
 
 <!-- Image Wrapper Section -->
 <div class="image-wrapper">
@@ -427,7 +455,8 @@ img {
 </div>
 
 <!-- Masonry Photography Section -->
-       <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">PHOTOGRAPHY</h4>
+<div id="photography">
+    <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">PHOTOGRAPHY</h4>
              <div class="portfolio-images">
                <div class="masonry">
                  <div class="mItem">
@@ -488,7 +517,8 @@ img {
         </div>
 
   <!-- Sound Design Title -->
-    <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">SOUND DESIGN</h4>
+  <div id="sound-design">
+      <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">SOUND DESIGN</h4>
 
     <!-- Sound Design Section -->
     <div class="image-wrapper">
@@ -512,7 +542,8 @@ img {
     </div>
 
     <!-- Masonry Digital Art Section -->
-           <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">DIGITAL ART</h4>
+    <div id="digital-art">
+  <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">DIGITAL ART</h4>
                  <div class="portfolio-images">
                    <div class="masonry">
                      <div class="mItem">
@@ -550,7 +581,8 @@ img {
               </div>
 
               <!-- Graphic Design Section -->
-              <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">GRAPHIC DESIGN</h4>
+              <div id="graphic-design">
+                  <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">GRAPHIC DESIGN</h4>
               <div class="graphic-design-container">
                   <div class="gItem">
                       <img src="MAGAZINECOVER.jpg" alt="Graphic Design Image 1" onclick="openLightbox('MAGAZINECOVER.jpg')">
@@ -619,6 +651,13 @@ img {
                   modal.style.display = "none";
               }
 
+              document.querySelector('.header-right li:nth-child(2)').addEventListener('mouseover', function() {
+                    this.querySelector('ul').style.display = 'block';
+                });
+
+                document.querySelector('.header-right li:nth-child(2)').addEventListener('mouseleave', function() {
+                    this.querySelector('ul').style.display = 'none';
+                });
 
         </script>
 
