@@ -26,45 +26,80 @@
 
         /* Header styles */
         .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
             background-color: #0a0a0a;
-            padding: 10px 5px;
-        }
-        .header a {
-            float: left;
             color: #C0C0C0;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #C0C0C0;
+        }
+
+        .header-right ul.nav-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-right ul.nav-menu li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .header-right ul.nav-menu li a {
+            text-decoration: none;
+            color: #C0C0C0;
+            padding: 10px;
+        }
+
+        .header-right ul.nav-menu li a:hover {
+            color: #ddd;
+        }
+
+        /* Dropdown styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #222;
+            min-width: 150px;
+            border: 1px solid #333;
+            z-index: 999;
+        }
+
+        .dropdown-content li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            display: block;
             padding: 10px;
             text-decoration: none;
-            font-size: 13px;
-            font-weight:700 ;
-            line-height: 20px;
+            color: #C0C0C0;
         }
-        .header a.logo {
-            font-size: 18px;
-            font-weight:800 ;
-        }
-        .header a:hover {
+
+        .dropdown-content li a:hover {
             background-color: #0a0a0a;
-            color: white;
+            color: #C0C0C0;
         }
-        .header-right {
-            float: right;
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
-        @media screen and (max-width: 500px) {
-            .header a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-            .header-right {
-                float: none;
-            }
-        }
+
 
         /* Add padding to the top of the content to avoid overlapping with the sticky header */
         #main {
@@ -351,16 +386,6 @@ img {
       filter: brightness(70%);
   }
 
-  .header-right li ul li a:hover {
-    background-color: #333;
-    color: white;
-}
-
-.header-right li ul li {
-    border-bottom: 1px solid #444;
-}
-
-
     </style>
 </head>
 <body style="background-color: #0a0a0a;">
@@ -368,24 +393,22 @@ img {
   <div class="header">
       <a href="#home" class="logo">MARIA GACHUHI</a>
       <div class="header-right">
-          <ul style="list-style-type: none; margin: 0; padding: 0;">
-              <li style="display: inline;"><a href="#about">ABOUT</a></li>
-              <li style="display: inline; position: relative;">
-                  <a href="#portfolio">PORTFOLIO</a>
-                  <!-- Dropdown menu -->
-                  <ul style="display: none; position: absolute; top: 100%; left: 0; background-color: #0a0a0a; list-style: none; margin: 0; padding: 10px; border: 1px solid #555;">
-                      <li style="margin: 5px 0;"><a href="#film" style="color: #C0C0C0; text-decoration: none;">Film</a></li>
-                      <li style="margin: 5px 0;"><a href="#photography" style="color: #C0C0C0; text-decoration: none;">Photography</a></li>
-                      <li style="margin: 5px 0;"><a href="#sound-design" style="color: #C0C0C0; text-decoration: none;">Sound Design</a></li>
-                      <li style="margin: 5px 0;"><a href="#digital-art" style="color: #C0C0C0; text-decoration: none;">Digital Art</a></li>
-                      <li style="margin: 5px 0;"><a href="#graphic-design" style="color: #C0C0C0; text-decoration: none;">Graphic Design</a></li>
+          <ul class="nav-menu">
+              <li><a href="#about">ABOUT</a></li>
+              <li class="dropdown">
+                  <a href="#portfolio" class="dropbtn">PORTFOLIO</a>
+                  <ul class="dropdown-content">
+                      <li><a href="#film">Film</a></li>
+                      <li><a href="#photography">Photography</a></li>
+                      <li><a href="#sound-design">Sound Design</a></li>
+                      <li><a href="#digital-art">Digital Art</a></li>
+                      <li><a href="#graphic-design">Graphic Design</a></li>
                   </ul>
               </li>
-              <li style="display: inline;"><a href="#contact">CONTACT</a></li>
+              <li><a href="#contact">CONTACT</a></li>
           </ul>
       </div>
   </div>
-
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="home">
@@ -409,8 +432,7 @@ img {
             </div>
 
     <!-- Film Section Title -->
-    <div id="film">
-        <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">FILM</h4>
+<h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">FILM</h4>
 
 <!-- Image Wrapper Section -->
 <div class="image-wrapper">
@@ -449,8 +471,7 @@ img {
 </div>
 
 <!-- Masonry Photography Section -->
-<div id="photography">
-    <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">PHOTOGRAPHY</h4>
+       <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">PHOTOGRAPHY</h4>
              <div class="portfolio-images">
                <div class="masonry">
                  <div class="mItem">
@@ -511,8 +532,7 @@ img {
         </div>
 
   <!-- Sound Design Title -->
-  <div id="sound-design">
-      <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">SOUND DESIGN</h4>
+    <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">SOUND DESIGN</h4>
 
     <!-- Sound Design Section -->
     <div class="image-wrapper">
@@ -536,8 +556,7 @@ img {
     </div>
 
     <!-- Masonry Digital Art Section -->
-    <div id="digital-art">
-  <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">DIGITAL ART</h4>
+           <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">DIGITAL ART</h4>
                  <div class="portfolio-images">
                    <div class="masonry">
                      <div class="mItem">
@@ -575,8 +594,7 @@ img {
               </div>
 
               <!-- Graphic Design Section -->
-              <div id="graphic-design">
-                  <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">GRAPHIC DESIGN</h4>
+              <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">GRAPHIC DESIGN</h4>
               <div class="graphic-design-container">
                   <div class="gItem">
                       <img src="MAGAZINECOVER.jpg" alt="Graphic Design Image 1" onclick="openLightbox('MAGAZINECOVER.jpg')">
@@ -645,14 +663,7 @@ img {
                   modal.style.display = "none";
               }
 
-              // Show/hide dropdown menu on hover
-              document.querySelector('.header-right > ul > li:nth-child(2)').addEventListener('mouseenter', function() {
-                  this.querySelector('ul').style.display = 'block';
-              });
 
-              document.querySelector('.header-right > ul > li:nth-child(2)').addEventListener('mouseleave', function() {
-                  this.querySelector('ul').style.display = 'none';
-              });
         </script>
 
 
