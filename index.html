@@ -364,20 +364,20 @@ img {
   }
 
   .about-images {
-      flex: 1; /* Image section takes up half the container */
+      flex: 1; /* Image section takes up as mcuh of the container as needed */
       display: flex;
       flex-direction: column; /* Stack the images horizontally */
       gap: 20px; /* Space between the images */
   }
 
   .about-img {
-      max-width: 250px; /* Ensure the images are responsive */
+      max-width: 300px; /* Ensure the images are responsive */
       border-radius: 50%; /* Optional: Add rounded corners */
   }
 
   @media (max-width: 768px) {
       .about-flex-container {
-          flex-direction: column; /* Stack the text and images vertically on smaller screens */
+          flex-direction: column; /* Stack the text and images horizontally on smaller screens */
       }
 
       .about-text {
