@@ -377,11 +377,21 @@ img {
   }
 
   .graphic-design-container .gItem img {
-      width:50%; /* Ensures image takes up the entire width of its container */
-      height: auto;
+      width: 50%; /* Ensures each image takes up half the container width */
+      height: auto; /* Maintains aspect ratio */
       transition: transform 0.3s ease, filter 0.3s ease;
-      float: left;
   }
+
+  .graphic-design-container .gItem img.left {
+      float: left; /* Floats the image to the left */
+      margin-right: 10px; /* Optional spacing between images */
+  }
+
+  .graphic-design-container .gItem img.right {
+      float: right; /* Floats the image to the right */
+      margin-left: 10px; /* Optional spacing between images */
+  }
+
 
   .graphic-design-container .gItem img:hover {
       transform: scale(1.05);
@@ -603,10 +613,10 @@ img {
                   <h4 class="w3-text-white w3-opacity" style="font-size: 20px; font-weight:700; text-align: center;">GRAPHIC DESIGN</h4>
               <div class="graphic-design-container">
                   <div class="gItem">
-                      <img src="MAGAZINECOVER.jpg" alt="Graphic Design Image 1" onclick="openLightbox('MAGAZINECOVER.jpg')">
+                      <img src="MAGAZINECOVER.jpg" alt="Graphic Design Image 1" class="left" onclick="openLightbox('MAGAZINECOVER.jpg')">
                   </div>
                   <div class="gItem">
-                      <img src="VINYLALBUMCOVER.jpg" alt="Graphic Design Image 2" onclick="openLightbox('VINYLALBUMCOVER.jpg')">
+                      <img src="VINYLALBUMCOVER.jpg" alt="Graphic Design Image 2" class="right" onclick="openLightbox('VINYLALBUMCOVER.jpg')">
                   </div>
                 </div>
               </div>
